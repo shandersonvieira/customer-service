@@ -146,4 +146,4 @@ jobs:
           envsubst < infra/services/soat-backend.yml | sponge infra/services/soat-backend.yml
 
           kubectl apply -k infra/
-          kubectl rollout status deployment/soat-backend -n customer-service
+          kubectl rollout status deployment/customer-service-backend -n customer-service

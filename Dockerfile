@@ -26,4 +26,5 @@ COPY --from=builder /app/target/*.jar app.jar
 
 EXPOSE 8080
 
-ENTRYPOINT ["java", "-XX:+UseContainerSupport", "-XX:MaxRAMPercentage=80.0", "-Dspring.profiles.active=prod,mercadoPagoClient", "-jar", "/app/app.jar"]
+# ENTRYPOINT ["java", "-XX:+UseContainerSupport", "-XX:MaxRAMPercentage=80.0", "-Dspring.profiles.active=prod,mercadoPagoClient", "-jar", "/app/app.jar"]
+ENTRYPOINT ["sh", "-c", "echo '==== ENV VARS ====' && env && echo '==== STARTING APP ====' && exec java -XX:+UseContainerSupport -XX:MaxRAMPercentage=80.0 -Dspring.profiles.active=prod,mercadoPagoClient -jar /app/app.jar"]

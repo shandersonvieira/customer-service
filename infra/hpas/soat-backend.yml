@@ -2,7 +2,7 @@ apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
   name: soat-backend-hpa
-  namespace: soat
+  namespace: customer-service
   labels:
     app: soat-backend
     tier: autoscaler

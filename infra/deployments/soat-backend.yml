@@ -31,7 +31,7 @@ spec:
               memory: "128Mi"
             limits:
               cpu: "500m"
-              memory: "128mi"
+              memory: "128Mi"
           envFrom:
             - configMapRef:
                 name: customer-service-backend-config

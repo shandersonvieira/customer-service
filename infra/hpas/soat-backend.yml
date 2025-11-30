@@ -1,10 +1,10 @@
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: soat-backend-hpa
+  name: customer-service-backend-hpa
   namespace: customer-service
   labels:
-    app: soat-backend
+    app: customer-service-backend
     tier: autoscaler
   annotations:
     maintainer: "SOAT - Grupo 75"
@@ -13,7 +13,7 @@ spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: soat-backend
+    name: customer-service-backend
   minReplicas: 2
   maxReplicas: 5
   metrics:

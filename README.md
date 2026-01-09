@@ -31,8 +31,8 @@ Este projeto foi desenvolvido utilizando **Java 21** e **Spring Boot 3**, seguin
 
 Para garantir a qualidade e a estabilidade do ambiente produtivo, o repositório segue regras rígidas de proteção:
 
-* **Bloqueio de Commits na Main:** Não é permitido realizar commits diretamente na branch &main&. Alterações devem vir de branches auxiliares.
-* **Obrigatoriedade de Pull Requests (PR):** Merges para a &main& só podem ser realizados através de Pull Requests revisados.
+* **Bloqueio de Commits na Main:** Não é permitido realizar commits diretamente na branch `main`. Alterações devem vir de branches auxiliares.
+* **Obrigatoriedade de Pull Requests (PR):** Merges para a `main` só podem ser realizados através de Pull Requests revisados.
 * **Verificação de Status (CI):** O merge só é habilitado se a esteira de Integração Contínua (CI) for executada com sucesso, garantindo que todos os testes passaram e o Quality Gate do SonarQube foi atingido.
 
 ## Configuração Local
@@ -41,7 +41,7 @@ Para garantir a qualidade e a estabilidade do ambiente produtivo, o repositório
 
 * Docker e Docker Compose
 * Java 21 (Opcional, para execução fora do container)
-* Maven (wrapper &./mvnw& incluso no projeto)
+* Maven (wrapper `./mvnw` incluso no projeto)
 
 ### Instalação e Execução
 
@@ -54,9 +54,9 @@ docker-compose up --build
 ``
 
 2.  **Acessar a API:**
-    * A API estará disponível em: &http://localhost:8080&
-    * **Documentação Swagger:** &http://localhost:8080/docs&
-    * **Spec OpenAPI:** &http://localhost:8080/v3/api-docs&
+    * A API estará disponível em: `http://localhost:8080`
+    * **Documentação Swagger:** `http://localhost:8080/docs`
+    * **Spec OpenAPI:** `http://localhost:8080/v3/api-docs`
 
 3.  **Limpar o ambiente:**
 
@@ -68,9 +68,9 @@ docker-compose down
 
 A documentação completa pode ser visualizada no Swagger, mas os principais endpoints são:
 
-* **POST** &/customers&: Cria um novo cliente.
+* **POST** `/customers`: Cria um novo cliente.
     * *Payload:* Nome, CPF, E-mail e Telefone.
-* **GET** &/customers?cpf={cpf}&: Busca os dados de um cliente pelo CPF.
+* **GET** `/customers?cpf={cpf}`: Busca os dados de um cliente pelo CPF.
 
 ## Testes
 
@@ -88,13 +88,13 @@ A qualidade do código é monitorada continuamente pelo **SonarQube**. O pipelin
 
 **Evidência de Cobertura:**
 
-![Cobertura de Testes SonarQube](CAMINHO_DA_SUA_IMAGEM_AQUI.png)
+![Cobertura de Testes SonarQube](./img/code-coverage.png)
 
 > A imagem acima demonstra as métricas de cobertura de código e confiabilidade extraídas da última análise.
 
 ## Pipeline CI/CD
 
-O fluxo de automação está definido em &.github/workflows/ci.yml& e contempla:
+O fluxo de automação está definido em `.github/workflows/ci.yml` e contempla:
 
 1.  **Docker Build:** Constrói a imagem da aplicação.
 2.  **Unit Test:** Executa os testes automatizados dentro do container, gerando o relatório de cobertura Jacoco.
@@ -107,9 +107,9 @@ O fluxo de automação está definido em &.github/workflows/ci.yml& e contempla:
 
 ## Recursos Kubernetes
 
-Os manifestos de infraestrutura estão localizados na pasta &infra/&:
+Os manifestos de infraestrutura estão localizados na pasta `infra/`:
 
-* **Namespace:** Criação do namespace &customer-service&.
+* **Namespace:** Criação do namespace `customer-service`.
 * **ConfigMap:** Variáveis de ambiente como URL do banco de dados.
 * **Secrets:** Credenciais sensíveis (usuário e senha do banco).
 * **Deployment:** Gerencia as réplicas da aplicação (Backend).
